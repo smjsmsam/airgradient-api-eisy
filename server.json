@@ -1,0 +1,23 @@
+{
+    "name": "AirGradient",
+    "docs": "https://github.com/smjsmsam/airgradient-polyglotv3/master/README.md",
+    "type": "python",
+    "executable": "airgradient-poly.py",
+	"install": "install.sh",
+    "shortPoll": "120",
+    "description": "Connect AirGradient indoor air quality monitor to eisy.",
+    "notice": "\"AirGradient\" is a trademark owned by AirGradient Co., see www.airgradient.com for more information. This Node Server is neither developed by nor endorsed by AirGradient.",
+    "credits": [
+        {
+            "title": "AirGradient: A UDI Polyglot V3 Node Server for the AirGradient DIY Air Quality Sensor",
+            "author": "Mark Walter",
+            "version": "1.0.0",
+            "date": "February 10,2024",
+            "source": "https://github.com/smjsmsam/airgradient-polyglotv3",
+            "license": "https://raw.github.com/smjsmsam/airgradient-polyglotv3/master/LICENSE"
+        }
+    ],
+    "customParams": {
+        "Token": ""
+    }
+}
