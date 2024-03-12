@@ -1,0 +1,40 @@
+<editors>
+    <editor id="bool">
+        <range uom="2" subset="0,1" />
+    </editor>
+    <editor id="LOCATIONID">
+        <range uom="0" min="0" max="1000" prec="1" />
+    </editor>
+    <editor id="LOCATIONNAME">
+        <range uom="145" min="-10000" max="10000"  prec="0" />
+    <editor id="SERIALNO">
+        <range uom="145" min="-10000000" max="10000000" prec="0" />
+    <editor id="PM01">
+        <range uom="122" min="0" max="100" step="1" prec="1" />
+    <editor id="PM02">
+        <range uom="122" min="0" max="100" step="1" prec="1" />
+    <editor id="PM10">
+        <range uom="122" min="0" max="100" step="1" prec="1" />
+    <editor id="PM003">
+        <range uom="0" min="0" max="1000" step="1" prec="1" />
+    <editor id="ATMP">
+        <range uom="145" min="-100" max="100" step="1" prec="1" />
+    <editor id="RHUM">
+        <range uom="145" min="0" max="100" step="1" prec="1" />
+    <editor id="RCO2">
+        <range uom="145" min="0" max="10000" step="1" prec="1" />
+    <editor id="TVOC">
+        <range uom="145" min="0" max="10000" step="1" prec="1" />
+    <editor id="TVOCINDEX">
+        <range uom="145" min="0" max="1000" step="1" prec="1" />
+    <editor id="NOXINDEX">
+        <range uom="145" min="0" max="1000" step="1" prec="1" />
+    <editor id="WIFI">
+        <range uom="145" min="-100" max="0" step="1" prec="1" />
+    <editor id="LEDMODE">
+        <range uom="145" min="-10000" max="10000" prec="0" />
+    <editor id="TIMESTAMP">
+        <range uom="145" min="-100000000000000000000" max="100000000000000000000" prec="0" />
+    <editor id="FIRMWAREVERSION">
+        <range uom="145" min="0" max="100000" step="1" prec="1" />
+</editors>

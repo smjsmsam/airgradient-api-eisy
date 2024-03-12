@@ -1,0 +1,31 @@
+<nodeDefs>
+  <nodeDef id="test" nodeType="139" nls="ctl">
+    <editors />
+    <sts>
+      <st id="ST" editor="bool" />
+      <st id="GV1" editor="LOCATIONID" />
+      <st id="GV2" editor="LOCATIONNAME" />
+      <st id="GV3" editor="SERIALNO" />
+      <st id="GV4" editor="PM01" />
+      <st id="GV5" editor="PM02" />
+      <st id="GV6" editor="PM10" />
+      <st id="GV7" editor="PM003" />
+      <st id="CLITEMP" editor="ATMP" />
+      <st id="CLIHUM" editor="RHUM" />
+      <st id="CO2LVL" editor="RCO2" />
+      <st id="GV8" editor="TVOC" />
+      <st id="GV9" editor="TVOCINDEX" />
+      <st id="GV10" editor="NOXINDEX" />
+      <st id="GV11" editor="WIFI" />
+      <st id="GV12" editor="LedMode" />
+      <st id="GV13" editor="TIMESTAMP" />
+      <st id="GV14" editor="FIRMWAREVERSION" />
+    </sts>
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="DISCOVER" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+</nodeDefs>

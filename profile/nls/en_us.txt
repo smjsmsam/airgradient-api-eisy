@@ -1,0 +1,21 @@
+# controller
+ND-test-NAME = AirGradient
+CMD-ctl-DISCOVER-NAME = Re-Discover
+ST-ctl-ST-NAME = NodeServer Online
+ST-ctl-GV1-NAME = Location ID
+ST-ctl-GV2-NAME = Location Name
+ST-ctl-GV3-NAME = Serial Number
+ST-ctl-GV4-NAME = Raw PM 1 (ug)
+ST-ctl-GV5-NAME = Raw PM 2.5 (ug)
+ST-ctl-GV6-NAME = Raw PM 10 (ug)
+ST-ctl-GV7-NAME = PM 0.3 Count
+ST-ctl-CLITEMP-NAME = Ambient Temperature (°C)
+ST-ctl-CLIHUM-NAME = Relative Humidity (%)
+ST-ctl-CO2LVL-NAME = CO2 (ppm)
+ST-ctl-GV8-NAME = TVOC (ppb)
+ST-ctl-GV9-NAME = TVOC Index
+ST-ctl-GV10-NAME = NOx Index
+ST-ctl-GV11-NAME = Wifi (dBm)
+ST-ctl-GV12-NAME = LedMode
+ST-ctl-GV13-NAME = Timestamp (UTC)                       
+ST-ctl-GV14-NAME = Firmware Version
