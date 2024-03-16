@@ -26,7 +26,7 @@ The settings for this node are:
 # Release Notes
 
 - 1.0.1 03/16/2024
-   -Fixed errors for invalid parameters
-   -Added documention
+   - Fixed errors for invalid parameters
+   - Added documention
 - 1.0.0 03/12/2024
    - Initial version published to github
