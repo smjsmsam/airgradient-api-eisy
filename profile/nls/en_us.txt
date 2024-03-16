@@ -1,5 +1,5 @@
 # controller
-ND-test-NAME = AirGradient
+ND-AG-NAME = AirGradient
 CMD-ctl-DISCOVER-NAME = Re-Discover
 ST-ctl-ST-NAME = NodeServer Online
 ST-ctl-GV1-NAME = Location ID

@@ -1,10 +1,7 @@
 
-# Example 1 Node Server (c) 2021 Robert Paauwe
+# AirGradient Node Server
 
-A simple node server that demonstrates how to create a node server that
-doesn't have a controller node and only creates device nodes.  This node
-server simply increments a counter and updates GV0 and GV1 with the updated
-count at every poll() interval.
+A simple node server for connection to the AirGradient air quality sensor using AirGradientAPI.
 
 ## Installation
 
@@ -13,12 +10,12 @@ count at every poll() interval.
 The settings for this node are:
 
 #### Short Poll
-   * How often to increment the count
-#### Long Poll
-   * Not used
+   * How often to increment the API request
+#### Token
+   * Client token, which can be found on the AirGradient dashboard.
 
-#### multiplier
-   * Apply the multiplier to count and save in GV1
+#### Index
+   * Based on the order of AirGradient devices on client account, 0-indexed.
 
 
 ## Requirements
@@ -28,5 +25,8 @@ The settings for this node are:
 
 # Release Notes
 
-- 1.0.0 08/11/2021
+- 1.0.1 03/16/2024
+   -Fixed errors for invalid parameters
+   -Added documention
+- 1.0.0 03/12/2024
    - Initial version published to github

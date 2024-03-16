@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Polyglot v3 node server Example 1
-Copyright (C) 2021 Robert Paauwe
+Polyglot v3 node server AirGradient
 
 MIT License
 """
@@ -18,13 +17,9 @@ Parameters = None
 n_queue = []
 count = 0
 
-'''
-TestNode is the device class.  Our simple counter device
-holds two values, the count and the count multiplied by a user defined
-multiplier. These get updated at every shortPoll interval
-'''
-class TestNode(udi_interface.Node):
-    id = 'test'
+
+class AirGradientNode(udi_interface.Node):
+    id = 'AG'
     drivers = [
         {'driver': 'ST', 'value': 1, 'uom': 2},   # node server status
         {'driver': 'GV1', 'value': 0, 'uom': 0},       # location id
@@ -51,12 +46,7 @@ class TestNode(udi_interface.Node):
 
     commands = {'DISCOVER': noop}
 
-'''
-node_queue() and wait_for_node_event() create a simple way to wait
-for a node to be created.  The nodeAdd() API call is asynchronous and
-will return before the node is fully created. Using this, we can wait
-until it is fully created before we try to use it.
-'''
+
 def node_queue(data):
     n_queue.append(data['address'])
 
@@ -65,27 +55,17 @@ def wait_for_node_event():
         time.sleep(0.1)
     n_queue.pop()
 
-'''
-Read the user entered custom parameters. In this case, it is just
-the 'multiplier' value.  Save the parameters in the global 'Parameters'
-'''
 def parameterHandler(params):
     global Parameters
 
     Parameters.load(params)
 
-
-'''
-This is where the real work happens.  When we get a shortPoll, increment the
-count, report the current count in GV0 and the current count multiplied by
-the user defined value in GV1. Then display a notice on the dashboard.
-'''
 def poll(polltype):
     global count
     global Parameters
 
     if 'shortPoll' in polltype:
-        if Parameters['Token'] is None:
+        if Parameters['Token'] is None or Parameters['Token'] == "":
             LOGGER.debug("INVALID PARAMETER TOKEN!! See notice.")
             LOGGER.error("INVALID PARAMETER TOKEN!! See notice.")
             polyglot.Notices['token'] = "Missing AirGradient Token. Please configure it in CustomParams as 'Token'."
@@ -103,7 +83,7 @@ def poll(polltype):
                 return
             parse_json = json.loads(response_API.text)
             index = 0
-            if Parameters['Index'] == None:
+            if Parameters['Index'] == None or Parameters['Token'] == "":
                 LOGGER.debug("Index was not set prior. It has been defaulted to 0.")
                 polyglot.Notices['index'] = 'No index was set so it has been defaulted to 0.'
             else:
@@ -139,10 +119,7 @@ def poll(polltype):
             node.setDriver('GV12', 0, True, True, 145, data['ledMode'])
             node.setDriver('GV13', 0, True, True, 145, data['timestamp'])
             node.setDriver('GV14', 0, True, True, 145, data['firmwareVersion'])
-'''
-When we are told to stop, we update the node's status to False.  Since
-we don't have a 'controller', we have to do this ourselves.
-'''
+
 def stop():
     nodes = polyglot.getNodes()
     for n in nodes:
@@ -157,7 +134,6 @@ if __name__ == "__main__":
 
         Parameters = Custom(polyglot, 'customparams')
 
-        # subscribe to the events we want
         polyglot.subscribe(polyglot.CUSTOMPARAMS, parameterHandler)
         polyglot.subscribe(polyglot.ADDNODEDONE, node_queue)
         polyglot.subscribe(polyglot.STOP, stop)
@@ -168,13 +144,7 @@ if __name__ == "__main__":
         polyglot.setCustomParamsDoc()
         polyglot.updateProfile()
 
-        '''
-        Here we create the device node.  In a real node server we may
-        want to try and discover the device or devices and create nodes
-        based on what we find.  Here, we simply create our node and wait
-        for the add to complete.
-        '''
-        node = TestNode(polyglot, 'my_address', 'my_address', 'AirGradient')
+        node = AirGradientNode(polyglot, 'my_address', 'my_address', 'AirGradient')
         polyglot.addNode(node)
         wait_for_node_event()
 
